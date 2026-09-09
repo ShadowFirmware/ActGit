@@ -2,6 +2,7 @@
 
 body {
     background-color: #f5f6f8;
+    transition: background-color 1s ease;
 }
 
 .navbar-brand {
@@ -10,11 +11,13 @@ body {
 }
 
 /* Contenedor de pestañas dentro del navbar */
+
 .navbar .nav-tabs {
     border-bottom: none;
 }
 
 /* Pestañas */
+
 .navbar .nav-tabs .nav-link {
     color: rgba(255, 255, 255, 0.75);
     border: none;
@@ -30,6 +33,7 @@ body {
 }
 
 /* Pestaña activa */
+
 .navbar .nav-tabs .nav-link.active {
     color: #ffffff;
     background-color: transparent;
@@ -37,6 +41,7 @@ body {
 }
 
 /* Panel de contenido de cada pestaña */
+
 .tab-content {
     background-color: #ffffff;
     border: 1px solid #e3e6ea;
@@ -51,7 +56,9 @@ body {
 }
 
 /* Ajuste en pantallas pequeñas: pestañas en columna */
+
 @media (max-width: 991.98px) {
+
     .navbar .nav-tabs {
         flex-direction: column;
         width: 100%;
@@ -111,4 +118,3 @@ body {
         flex-basis: 100%;
     }
 }
-
