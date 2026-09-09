@@ -40,3 +40,128 @@ document.getElementById("volver-boton").addEventListener("click", function() {
     document.getElementById("miFormulario").reset();
 });
 
+// ======================================================
+// MANIPULACIÓN DEL DOM
+// ======================================================
+
+// Obtener elementos existentes del DOM
+
+const panelDom = document.getElementById("panelDom");
+
+const tituloDom = document.getElementById("tituloDom");
+
+const mensajeDom = document.getElementById("mensajeDom");
+
+const contenidoDom = document.getElementById("contenidoDom");
+
+
+// Colores que utilizará la página
+
+const coloresDom = [
+    "#ffc8dd",  // Rosa
+    "#c8f7c5",  // Verde
+    "#bde0fe"   // Azul
+];
+
+// Variable para guardar el intervalo
+
+let intervaloColoresDom;
+
+
+// Indica qué color estamos utilizando
+
+let colorActualDom = 0;
+
+panelDom.addEventListener("mouseenter", function() {
+
+    tituloDom.textContent = "🐱 ¡UIIA ACTIVADO!";
+
+    mensajeDom.textContent = "¡El DOM ha sido modificado!";
+
+    const video = document.createElement("video");
+
+
+    video.src = "video.mp4";
+
+    video.autoplay = true;
+
+    video.loop = true;
+
+    video.muted = true;
+
+
+    video.setAttribute("id", "videoDom");
+
+    video.setAttribute("controls", "true");
+
+
+    contenidoDom.innerHTML = "";
+
+
+    contenidoDom.appendChild(video);
+
+
+    panelDom.classList.add("activo");
+
+
+    colorActualDom = 0;
+
+    document.body.style.backgroundColor =
+        coloresDom[colorActualDom];
+
+
+    intervaloColoresDom = setInterval(function() {
+
+        colorActualDom++;
+
+
+        // Si llegamos al último color,
+        // regresamos al primero
+
+        if (colorActualDom >= coloresDom.length) {
+
+            colorActualDom = 0;
+
+        }
+
+
+        // Modificar el fondo del DOM
+
+        document.body.style.backgroundColor =
+            coloresDom[colorActualDom];
+
+
+    }, 5000);
+
+});
+
+
+panelDom.addEventListener("mouseleave", function() {
+
+    clearInterval(intervaloColoresDom);
+
+    const video = document.getElementById("videoDom");
+
+
+    if (video) {
+
+        video.remove();
+
+    }
+
+    tituloDom.textContent = "🐱 Panel del DOM";
+
+    mensajeDom.textContent =
+        "Pasa el cursor por aquí...";
+
+    contenidoDom.innerHTML = `
+        <span class="fs-1">
+            👀
+        </span>
+    `;
+
+    panelDom.classList.remove("activo");
+
+    document.body.style.backgroundColor = "#f3f3f3";
+
+});
