@@ -71,55 +71,50 @@ body {
     }
 }
 
-
-/* ==========================================================
-   MANIPULACIÓN DEL DOM
-   ========================================================== */
-
-/* Panel interactivo */
-
-#panelDom {
-    min-height: 350px;
-    border: none;
-    border-radius: 25px;
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+/* Sección de personajes (Home) */
+#cartas {
+    margin-top: 1.5rem;
 }
 
-/* Panel cuando está activo
-   Esta clase será agregada por JavaScript */
-
-#panelDom.activo {
-    transform: scale(1.05);
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.25) !important;
+#cartas h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
-/* Video creado dinámicamente por JavaScript */
-
-#videoDom {
-    width: 100%;
-    max-width: 320px;
-    border-radius: 20px;
-    margin-top: 15px;
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Animación de los textos */
-
-#tituloDom,
-#mensajeDom {
-    transition: all 0.3s ease;
-}
-
-/* Contenedor donde aparecerá el video */
-
-#contenidoDom {
-    min-height: 180px;
+.contenedor-cartas {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.carta {
+    flex: 1 1 180px;
+    background-color: #ffffff;
+    border: 1px solid #e3e6ea;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.carta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carta h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.carta p {
+    margin-bottom: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 575.98px) {
+    .carta {
+        flex-basis: 100%;
+    }
 }
