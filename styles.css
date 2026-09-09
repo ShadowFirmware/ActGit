@@ -64,3 +64,51 @@ body {
     }
 }
 
+/* Sección de personajes (Home) */
+#cartas {
+    margin-top: 1.5rem;
+}
+
+#cartas h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.contenedor-cartas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.carta {
+    flex: 1 1 180px;
+    background-color: #ffffff;
+    border: 1px solid #e3e6ea;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.carta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carta h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.carta p {
+    margin-bottom: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 575.98px) {
+    .carta {
+        flex-basis: 100%;
+    }
+}
+
