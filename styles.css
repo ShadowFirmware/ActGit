@@ -2,6 +2,7 @@
 
 body {
     background-color: #f5f6f8;
+    transition: background-color 1s ease;
 }
 
 .navbar-brand {
@@ -10,11 +11,13 @@ body {
 }
 
 /* Contenedor de pestañas dentro del navbar */
+
 .navbar .nav-tabs {
     border-bottom: none;
 }
 
 /* Pestañas */
+
 .navbar .nav-tabs .nav-link {
     color: rgba(255, 255, 255, 0.75);
     border: none;
@@ -30,6 +33,7 @@ body {
 }
 
 /* Pestaña activa */
+
 .navbar .nav-tabs .nav-link.active {
     color: #ffffff;
     background-color: transparent;
@@ -37,6 +41,7 @@ body {
 }
 
 /* Panel de contenido de cada pestaña */
+
 .tab-content {
     background-color: #ffffff;
     border: 1px solid #e3e6ea;
@@ -51,7 +56,9 @@ body {
 }
 
 /* Ajuste en pantallas pequeñas: pestañas en columna */
+
 @media (max-width: 991.98px) {
+
     .navbar .nav-tabs {
         flex-direction: column;
         width: 100%;
@@ -64,3 +71,55 @@ body {
     }
 }
 
+
+/* ==========================================================
+   MANIPULACIÓN DEL DOM
+   ========================================================== */
+
+/* Panel interactivo */
+
+#panelDom {
+    min-height: 350px;
+    border: none;
+    border-radius: 25px;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Panel cuando está activo
+   Esta clase será agregada por JavaScript */
+
+#panelDom.activo {
+    transform: scale(1.05);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Video creado dinámicamente por JavaScript */
+
+#videoDom {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de los textos */
+
+#tituloDom,
+#mensajeDom {
+    transition: all 0.3s ease;
+}
+
+/* Contenedor donde aparecerá el video */
+
+#contenidoDom {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
