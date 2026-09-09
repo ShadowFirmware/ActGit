@@ -49,9 +49,86 @@
                 <p>Bienvenido a la página principal.</p>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <h1>Profile</h1>
-                <p>Información del perfil del usuario.</p>
+    <div class="container">
+        <!-- Formulario -->
+        <div id="formulario-seccion" class="form-container">
+            <h2 class="form-title text-center mb-4">
+                <i class="fas fa-user-astronaut me-2"></i>Formulario Divertido
+            </h2>
+            <form id="miFormulario">
+                <!-- Nombre -->
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">¿Cómo te llamas?</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ej: Juan Pérez" required>
+                </div>
+
+                <!-- Última vez que te moriste -->
+                <div class="mb-3">
+                    <label for="ultimaMuerte" class="form-label">¿Cuándo fue la última vez que te moriste?</label>
+                    <input type="text" class="form-control" id="ultimaMuerte" placeholder="Ej: Ayer, en 1999, etc." required>
+                </div>
+
+                <!-- ¿Estás vivo? -->
+                <div class="mb-3">
+                    <label class="form-label">¿Estás vivo?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="vivo" id="vivoSi" value="Sí" required>
+                        <label class="form-check-label" for="vivoSi">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="vivo" id="vivoNo" value="No">
+                        <label class="form-check-label" for="vivoNo">No</label>
+                    </div>
+                </div>
+
+                <!-- ¿Eres un gato? -->
+                <div class="mb-3">
+                    <label class="form-label">¿Eres un gato?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gato" id="gatoSi" value="Sí" required>
+                        <label class="form-check-label" for="gatoSi">Sí</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gato" id="gatoNo" value="No">
+                        <label class="form-check-label" for="gatoNo">No</label>
+                    </div>
+                </div>
+
+                <!-- Superpoder -->
+                <div class="mb-3">
+                    <label for="superpoder" class="form-label">¿Cuál es tu superpoder?</label>
+                    <input type="text" class="form-control" id="superpoder" placeholder="Ej: Volar, Invisibilidad, etc." required>
+                </div>
+
+                <!-- Botón de enviar -->
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane me-2"></i>Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sección de resultado (oculta al inicio) -->
+        <div id="resultado-seccion" class="d-none">
+            <div class="card result-card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0 text-center">
+                        <i class="fas fa-check-circle me-2"></i>¡Datos Enviados!
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div id="datos-resultados" class="result-data"></div>
+                </div>
+                <div class="card-footer text-center">
+                    <button id="volver-boton" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i>Volver al formulario
+                    </button>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
             <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
                 <h1>Settings</h1>
                 <p>Ajustes y configuración de la aplicación.</p>
